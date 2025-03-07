@@ -17,7 +17,6 @@ client.commands = new Collection();
 const commands = [];
 const commandsPath = path.join(__dirname, "commands");
 
-// Load all command files dynamically
 fs.readdirSync(commandsPath).forEach(file => {
   if (!file.endsWith(".js")) return;
   
@@ -26,12 +25,11 @@ fs.readdirSync(commandsPath).forEach(file => {
   commands.push(command.data.toJSON());
 });
 
-console.log(`✅ Loaded ${client.commands.size} command(s)!`); // Added this line
+console.log(`✅ Loaded ${client.commands.size} command(s)!`);
 
 client.once("ready", async () => {
   console.log(`✅ Logged in as ${client.user.tag}`);
 
-  // Slash commands register
   const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);
   try {
     console.log("⌛ Registering slash commands...");
