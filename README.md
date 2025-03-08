@@ -43,5 +43,5 @@ A basic command handler for a Discord bot using slash commands.
 - `fs`
 - `path`
 
-## Author
-[wicksted](https://github.com/wicksted)
+## Developer
+[wicksted](https://github.com/wicksted) (@wicksted) in discord
